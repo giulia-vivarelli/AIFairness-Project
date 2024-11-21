@@ -1,7 +1,27 @@
-AIFairness Project documentation
-===================================
+Akkodis Dataset Analysis
+=========================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+Introduction
+------------
+
+Overview
+~~~~~~~~~~~~~
+The Akkodis Dataset consists of 40 columns, and 21,277 entries. Each candidate is identified by its ID and can appear in more than one entry.
+**Features Description**
+* *ID*: unique identifier for the candidate
+* *Candidate State*: status of the candidate's application
+  * Hired 
+  * Vivier
+  * QM
+  * In selection
+  * First contact
+  * Economic proposal
+  * Imported
+* *Age Range*: range of age for the candidate
+  * < 20 years
+  * 20 - 25 years
+  * 26 - 30 years
+  * 31 - 35 years
+  * 36 - 40 years
+  * 40 - 45 years
+  * > 45 years
