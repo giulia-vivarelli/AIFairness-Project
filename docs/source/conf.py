@@ -3,7 +3,6 @@
 # -- Project information
 
 project = 'AIFairness-Project'
-copyright = '2024, Giulia Vivarelli'
 author = 'Giulia Vivarelli'
 
 release = '0.1'
