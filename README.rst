@@ -1,9 +1,5 @@
-Template for the Read the Docs tutorial
-=======================================
+# AIFairnessProject
+=====================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
-
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+This project aims to explore fairness issues in the use of ML models, with respect to 
+classification algorithms applied to HR datasets.

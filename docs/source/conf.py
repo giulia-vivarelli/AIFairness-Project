@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'AIFairness-Project'
+copyright = '2024, Giulia Vivarelli'
+author = 'Giulia Vivarelli'
 
 release = '0.1'
 version = '0.1.0'
