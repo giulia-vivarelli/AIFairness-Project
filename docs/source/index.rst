@@ -6,7 +6,7 @@ Introduction
 
 Overview
 ~~~~~~~~~~~~~
-The Akkodis Dataset consists of 40 columns, and 21,277 entries. Each candidate is identified by its ID and can appear in more than one entry.
+The Akkodis Dataset consists of 40 columns, and 21,277 entries. Each candidate is identified by its ID and can appear in more than one entry, each entry is specific for an *Event_type__val*.
 
 **Features Description**
  * *ID*: unique identifier for the candidate
@@ -29,3 +29,43 @@ The Akkodis Dataset consists of 40 columns, and 21,277 entries. Each candidate i
  * *Residence*: current place of residence for the candidate
  * *Sex*: gender identification (Male|Female)
  * *Protected Category*: indicates if the candidate falls into a protected category
+  * Nothing
+  * Article 1
+  * Article 18
+ * *TAG*: keywords used by recruiter
+ * *Study Area*: Field of study or academic discipline
+ * *Study Title*: Academic degree or title obtained
+  * Five-year degree
+  * Doctorate
+  * High school graduation
+  * Three-year degree
+  * master's degree
+  * Professional qualification
+  * Middle school diploma
+ * *Years Experience*: number of years of professional experience
+  * 0
+  * 0-1
+  * 1-3
+  * 3-5
+  * 5-7
+  * 7-10
+  * +10
+ * *Sector*: industry or sector in which the candidate has experience
+ * *Last Role*: candidate's most recent job role
+ * *Year of Insertion*: year when the candidate's information was entered into out portal
+ * *Year of Recruitment*: year in which the candidate was hired
+ * *Recruitment Request*: represents the application request for a candidacy
+ * *Assumption Headquarters*: headquarters location associated with the hiring assumption
+ * *Job Family Hiring*: Job family or category for the hiring position
+ * *Job Title Hiring*: specific job title for the hiring position
+ * *Event_type__val*: It specifies the stage of the recruitment process for the candidate
+ * *Event_feedback*: feedback received from an event (OK|KO)
+ * *Linked_search_key*: keys indicate the number of searches conducted for a job position
+ * *Overall*: overall assessment, interview score
+  * '1 - Low' or '~ 1 - Low'
+  * '2 - Medium' or '~ 2 - Medium'
+  * '3 - High' or '~ 3 - High'
+  * '4 - Top' or '~ 4 - Top'
+ * *Job Description*: description of the job role
+ * *Candidate Profile*: profile information for the candidate
+ * *Years Experience*: additional field for specifying years of experience
