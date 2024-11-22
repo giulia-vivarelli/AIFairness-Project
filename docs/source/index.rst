@@ -16,13 +16,13 @@ Features
 
 - *ID*: unique identifier for the candidate
 - *Candidate State*: status of the candidate’s application
-- Hired
-- Vivier
-- QM
-- In selection
-- First contact
-- Economic proposal
-- Imported
+  - Hired
+  - Vivier
+  - QM
+  - In selection
+  - First contact
+  - Economic proposal
+  - Imported
 - *Age Range*: range of age for the candidate
 
   - < 20 years
