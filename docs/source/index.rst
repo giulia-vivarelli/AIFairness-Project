@@ -572,21 +572,10 @@ NaNs Handling
 
 There are many columns with no values specified.
 
-.. code:: python
-
-    print(f'Columns that contain NaN values:\n {df.columns[df.isnull().any()].tolist()}')
-
-
 .. parsed-literal::
 
     Columns that contain NaN values:
      ['Residence', 'Protected Category', 'Tag', 'Study Area', 'Sector', 'Event_Type__Val', 'Event_Feedback']
-
-
-.. code:: python
-
-    for col in df.columns[df.isnull().any()].tolist():
-      print(f'{col} values: {df[col].unique()} \n')
 
 
 .. parsed-literal::
@@ -672,54 +661,13 @@ Feature Mapping
 
 Feature mapping can be used to simplify the values in the dataset.
 
-Let’s analyze each feature: \* **Candidate State**:
-
-.. code:: python
-
-    candidate_state_counts = df['Candidate State'].value_counts()
-    candidate_state_df = pd.DataFrame(candidate_state_counts.items(), columns=['Candidate State', 'Count'])
-    candidate_state_df.plot(x='Candidate State', y='Count', kind='bar', legend=False)
-    plt.title('Candidate State Counts')
-    plt.ylabel('Frequency')
-
-
-
-
-.. parsed-literal::
-
-    Text(0, 0.5, 'Frequency')
-
-
-
+Let’s analyze each feature: 
+- **Candidate State**:
 
 .. image:: Akkodis_Documentation_files/Akkodis_Documentation_25_1.png
 
 
 - **Age Range**:
-
-.. code:: python
-
-    custom_order = ['< 20 years', '20 - 25 years', '26 - 30 years',
-                    '31 - 35 years', '36 - 40 years', '40 - 45 years', '> 45 years']
-    df['Age Range'] = pd.Categorical(df['Age Range'], categories=custom_order, ordered=True)
-
-.. code:: python
-
-    age_range_counts = Counter(df['Age Range'].sort_values())
-    age_range_df = pd.DataFrame(age_range_counts.items(), columns=['Age Range', 'Count'])
-    age_range_df.plot(x='Age Range', y='Count', kind='bar', legend=False)
-    plt.title('Age Range Counts')
-    plt.ylabel('Frequency')
-
-
-
-
-.. parsed-literal::
-
-    Text(0, 0.5, 'Frequency')
-
-
-
 
 .. image:: Akkodis_Documentation_files/Akkodis_Documentation_28_1.png
 
@@ -738,36 +686,6 @@ Let’s analyze each feature: \* **Candidate State**:
      'SAN FELICE A CANCELLO » Caserta ~ Campania'
      'PERDIFUMO » Salerno ~ Campania'
      'PALMANOVA » Udine ~ Friuli Venezia Giulia']
-
-
-.. code:: python
-
-    #get the state list
-    residence_list = df['Residence'].unique()
-    state_list = [s for s in residence_list if ('(STATE)' in s) or ('(OVERSEAS)' in s) or ('ETHIOPIA' in s) or ('SOUTH AFRICAN REPUBLIC' in s) or ('USSR' in s) or ('YUGOSLAVIA' in s)]
-    state_list = [s.split(' » ')[0] for s in [s.split(' ~ ')[0] for s in state_list]]
-    state_list = sorted(set(state_list))
-    print(state_list)
-
-
-
-.. parsed-literal::
-
-    ['ALBANIA', 'ALGERIA', 'AUSTRIA', 'BELARUS', 'BELGIUM', 'BRAZIL', 'BULGARIA', 'CHILE', "CHINA PEOPLE'S REPUBLIC", 'COLOMBIA', 'CROATIA', 'CZECH REPUBLIC', 'EGYPT', 'ERITREA', 'FRANCE', 'GERMANY', 'GREAT BRITAIN-NORTHERN IRELAND', 'GREECE', 'GRENADA', 'HAITI', 'INDIA', 'INDONESIA', 'IRAN', 'ITALY', 'KUWAIT', 'LEBANON', 'LIBYA', 'LITHUANIA', 'MALAYSIA', 'MALTA', 'MEXICO', 'MONACO', 'MOROCCO', 'NETHERLANDS', 'NIGERIA', 'OMAN', 'PAKISTAN', 'PHILIPPINES', 'PORTUGAL', 'QATAR', 'REPUBLIC OF POLAND', 'ROMANIA', 'RUSSIAN FEDERATION', 'SAINT LUCIA', 'SAINT PIERRE ET MIQUELON (ISLANDS)', 'SAN MARINO', 'SERBIA AND MONTENEGRO', 'SINGAPORE', 'SLOVAKIA', 'SOUTH AFRICAN REPUBLIC', 'SPAIN', 'SRI LANKA', 'SWEDEN', 'SWITZERLAND', 'SYRIA', 'TONGA', 'TUNISIA', 'Türkiye', 'UKRAINE', 'UNITED ARAB EMIRATES', 'UNITED STATES OF AMERICA', 'USSR', 'UZBEKISTAN', 'VENEZUELA', 'YUGOSLAVIA']
-
-
-.. code:: python
-
-    #get the italian regions list
-    italy_list = [s for s in residence_list if ('(STATE)' not in s) and ('(OVERSEAS)' not in s) and ('ETHIOPIA' not in s) and ('SOUTH AFRICAN REPUBLIC' not in s) and ('USSR' not in s) and ('YUGOSLAVIA' not in s)]
-    italy_list = [s.split(' ~ ')[-1] for s in italy_list]
-    italy_list = sorted(set(italy_list))
-    print(italy_list)
-
-
-.. parsed-literal::
-
-    ['Abruzzo', 'Aosta Valley', 'Basilicata', 'Calabria', 'Campania', 'Emilia Romagna', 'Friuli Venezia Giulia', 'Lazio', 'Liguria', 'Lombardy', 'Marche', 'Molise', 'Not Specified', 'Piedmont', 'Puglia', 'Sardinia', 'Sicily', 'Trentino Alto Adige', 'Tuscany', 'Umbria', 'Veneto']
 
 
 .. code:: python
@@ -797,32 +715,7 @@ to ensure *Fairness*.
 
     df['Residence State'] = df['Residence'].apply(lambda x: x if x in state_list else 'ITALY')
 
-.. code:: python
-
-    #italian vs non-italian residence distribution
-    distrib_it = [len(df[df['Residence State'] == 'ITALY']),
-                    df.shape[0]-len(df[df['Residence State'] == 'ITALY'])]
-    labels = ['Italian Residence', 'Non-Italian Residence']
-    plt.pie(distrib_it, labels=labels, autopct='%1.1f%%')
-    plt.title('Italian vs Non-Italian Residence Distribution')
-    plt.show()
-
-
-
 .. image:: Akkodis_Documentation_files/Akkodis_Documentation_37_0.png
-
-
-.. code:: python
-
-    res_state_counts = Counter(df[df['Residence State'] != 'ITALY']['Residence State'])
-    res_state_df = pd.DataFrame(res_state_counts.items(), columns=['Residence State', 'Count'])
-    res_state_df = res_state_df.sort_values(by='Count', ascending=False)
-    res_state_df.head(20).plot(x='Residence State', y='Count', kind='bar', legend=False)
-    plt.title('Top 20 Residence States (non-italian)')
-    plt.ylabel('Frequency')
-    plt.show()
-
-
 
 .. image:: Akkodis_Documentation_files/Akkodis_Documentation_38_0.png
 
@@ -830,38 +723,6 @@ to ensure *Fairness*.
 .. code:: python
 
     df['Residence Italian Region'] = df['Residence'].apply(lambda x: x if x in italy_list else 'Not in ITALY')
-
-.. code:: python
-
-    df.loc[
-        (df['Residence State'] == 'ITALY') & (df['Residence Italian Region'] == 'Not in ITALY'),
-        'Residence Italian Region'
-    ] = 'Not Specified'
-
-.. code:: python
-
-    n_top = 8
-    
-    filtered_df = df[df['Residence Italian Region'] != 'Not in ITALY']
-    reg_distrib = Counter(filtered_df['Residence Italian Region'])
-    reg_distrib_df = pd.DataFrame(reg_distrib.items(), columns=['Residence Italian Region', 'Count'])
-    reg_distrib_df = reg_distrib_df.sort_values(by='Count', ascending=False)
-    
-    top = reg_distrib_df.iloc[:n_top]
-    
-    other_sum = reg_distrib_df.iloc[n_top:]['Count'].sum()
-    top= pd.concat([top, pd.DataFrame({'Residence Italian Region': ['Other'], 'Count': [other_sum]})])
-    
-    # Plot the pie chart
-    labels = top['Residence Italian Region']
-    sizes = top['Count']
-    
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
-    plt.title(f'Top {n_top} Italian Regions')
-    plt.show()
-
-
-
 
 .. image:: Akkodis_Documentation_files/Akkodis_Documentation_41_0.png
 
@@ -877,57 +738,14 @@ to ensure *Fairness*.
     ]
     df['European Residence'] = df['Residence State'].apply(lambda x: 'Yes' if x in european_countries else 'No')
 
-.. code:: python
-
-    eu_distrib = Counter(df['European Residence'])
-    eu_distrib_df = pd.DataFrame(eu_distrib.items(), columns=['European Residence', 'Count'])
-    
-    labels = eu_distrib_df['European Residence']
-    labels.replace({'Yes': 'European', 'No': 'Non-European'}, inplace=True)
-    sizes = eu_distrib_df['Count']
-    
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
-    plt.title('European Residence Distribution')
-    plt.show()
-
-
-
 .. image:: Akkodis_Documentation_files/Akkodis_Documentation_43_0.png
 
 
 The ``Residence`` column can be removed.
 
-.. code:: python
-
-    df = df.drop(columns=['Residence'])
 
 - **Sex**: the dataset is unbalanced with respect to the Sex feature,
   with 76.8% Male candidates and 23.2% female candidates.
-
-.. code:: python
-
-    sex_distrib = Counter(df['Sex'])
-    sex_distrib_df = pd.DataFrame(sex_distrib.items(), columns=['Sex', 'Count'])
-    
-    labels = sex_distrib_df['Sex']
-    sizes = sex_distrib_df['Count']
-    
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
-
-
-
-
-.. parsed-literal::
-
-    ([<matplotlib.patches.Wedge at 0x7fa8fc9fc460>,
-      <matplotlib.patches.Wedge at 0x7fa8fcbc4ee0>],
-     [Text(0.15654062369121927, -1.0888044053613875, 'Male'),
-      Text(-0.15654057272060573, 1.0888044126895817, 'Female')],
-     [Text(0.08538579474066504, -0.5938933120153022, '76.8%'),
-      Text(-0.0853857669385122, 0.5938933160124991, '23.2%')])
-
-
-
 
 .. image:: Akkodis_Documentation_files/Akkodis_Documentation_47_1.png
 
@@ -935,32 +753,6 @@ The ``Residence`` column can be removed.
 - **Protected Category**: the dataset is highly unbalanced with respect
   to the Protected Category feature, with only 0.4% candidates from
   protected categories.
-
-.. code:: python
-
-    pr_cat_distrib = Counter(df['Protected Category'])
-    pr_cat_distrib_df = pd.DataFrame(pr_cat_distrib.items(), columns=['Protected Category', 'Count'])
-    
-    labels = pr_cat_distrib_df['Protected Category']
-    labels.replace({'No': 'No Protected Category', 'Yes': 'Protected Category'}, inplace=True)
-    sizes = pr_cat_distrib_df['Count']
-    
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
-
-
-
-
-.. parsed-literal::
-
-    ([<matplotlib.patches.Wedge at 0x7fa8f9fef3d0>,
-      <matplotlib.patches.Wedge at 0x7fa8f9feef20>],
-     [Text(0.8346254005063664, -0.7165196723256019, 'No Protected Category'),
-      Text(-0.8346254188500342, 0.7165196509583008, 'Protected Category')],
-     [Text(0.45525021845801794, -0.39082891217760096, '99.6%'),
-      Text(-0.4552502284636549, 0.3908289005227095, '0.4%')])
-
-
-
 
 .. image:: Akkodis_Documentation_files/Akkodis_Documentation_49_1.png
 
@@ -978,23 +770,6 @@ The ``Residence`` column can be removed.
      '-, C, C++, DO178, LABVIEW, SOFTWARE DEVELOPMENT' 'PROCESS ENG.' ...
      '-, SOLIDWORKS, NX, CREO, INENTOR, GT POWER, AMESIM' 'SQL, UNIX'
      '-, ENVIRONMENTAL QUALITY, ENVIRONMENTAL MANAGER, ENVIRONMENTAL PROJECT ENGINEER, ISO 14001, ENVIRONMENTAL MANAGEMENT , ISO 14001, ENVIRONMENTAL MANAGEMENT, OFFSHORE']
-
-
-.. code:: python
-
-    all_keywords = df['Tag'].str.split(', ').explode()
-    keyword_counts = Counter(all_keywords)
-    
-    keyword_df = pd.DataFrame(keyword_counts.items(), columns=['Keyword', 'Count'])
-    keyword_df.drop(keyword_df[keyword_df['Keyword'] == '-'].index, inplace=True)
-    keyword_df.drop(keyword_df[keyword_df['Keyword'] == '.'].index, inplace=True)
-    keyword_df.drop(keyword_df[keyword_df['Keyword'] == 'X'].index, inplace=True)
-    keyword_df = keyword_df.sort_values(by='Count', ascending=False)
-    
-    keyword_df.head(10)
-
-
-
 
 .. raw:: html
 
