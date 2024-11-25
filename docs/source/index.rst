@@ -6,7 +6,7 @@ Overview
 
 The Akkodis Dataset consists of 40 columns, and 21,277 entries. Each
 candidate is identified by its ID and can appear in more than one entry,
-each entry is specific for an \*Event_type\__val\*.
+each entry is specific for an *Event_type\__val*.
 
 Dataset Description
 -------------------
@@ -124,35 +124,7 @@ for the position, based on the information provided. \* **Possible
 RAL**: a new column that predicts the adequate RAL for the candidate
 profile.
 
-.. code:: python
-
-    #imports
-    import pandas as pd
-    from collections import Counter
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-
-.. code:: python
-
-    dataset_path = 'Dataset_2.0_Akkodis.xlsx'
-    
-    df = pd.read_excel(dataset_path)
-
-.. code:: python
-
-    df.columns = df.columns.str.lstrip()
-    df.columns = df.columns.str.title()
-
 However the dataset contains very few samples with RAL values specified:
-
-.. code:: python
-
-    for col in df.columns:
-      if 'Ral' in col:
-        ral_null = df[col].isna().sum() / df.shape[0] * 100
-        print(f'{ral_null:.2f}% of samples have no {col} specified')
-
-
 .. parsed-literal::
 
     94.53% of samples have no Minimum Ral specified
@@ -164,14 +136,6 @@ However the dataset contains very few samples with RAL values specified:
 The **suitability** of a candidate can be obtained through
 ``Candidate State`` and ``Event_Feedback``. However the 2 columns don’t
 seem to be consistent:
-
-.. code:: python
-
-    filtered_df = df[df['Event_Feedback'].str.contains('KO', na=False)]
-    unique_values = filtered_df['Candidate State'].unique()
-    
-    print(df[df['Event_Feedback'].str.contains('KO', na=False)][['Candidate State', 'Event_Type__Val', 'Event_Feedback']])
-
 
 .. parsed-literal::
 
@@ -191,9 +155,8 @@ seem to be consistent:
     [854 rows x 3 columns]
 
 
-.. code:: python
 
-    df.head()
+
 
 
 
