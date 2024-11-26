@@ -626,7 +626,7 @@ possible values from 16 to 3:
 
 .. parsed-literal::
 
-    After mapping there are now 3 possible values for <Event_Feedback>:
+    After mapping there are now 3 possible values \for <Event_Feedback>:
      ['OK' 'Not Specified' 'KO']
 
 
