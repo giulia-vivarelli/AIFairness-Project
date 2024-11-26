@@ -600,7 +600,7 @@ whether they are eligible or not for the position. The distribution of ``Candida
 The majority of this candidates have "*imported*" as ``Candidate State``, which means that there's no way to evaluate their suitability.
 
 .. parsed-literal::
-    The 53.52% of the dataset is composed of 'Imported' candidates that have not sent their CV yet
+    The 53.52% of the dataset \is composed of 'Imported' candidates that have \not sent their CV yet
 
 
 **Event_feedback**
