@@ -1,6 +1,11 @@
 Dataset Analysis for AKKODIS
 ============================
 
+.. contents:: Table of Contents
+   :depth: 2
+   :local:
+   :backlinks: none
+
 Overview
 --------
 
@@ -1205,7 +1210,7 @@ Data Visualization
 
 
 **Correlation**
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_90_0.png
 
