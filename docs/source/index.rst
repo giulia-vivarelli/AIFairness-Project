@@ -35,13 +35,13 @@ Features
 
 - **Age Range**: range of age for the candidate
 
-  - ``< 20`` years
-  - ``20 - 25`` years
-  - ``26 - 30`` years
-  - ``31 - 35`` years
-  - ``36 - 40`` years
-  - ``40 - 45`` years
-  - ``> 45`` years
+  - ``< 20`` 
+  - ``20 - 25`` 
+  - ``26 - 30`` 
+  - ``31 - 35`` 
+  - ``36 - 40`` 
+  - ``40 - 45`` 
+  - ``> 45``
 
 - **Residence**: current place of residence for the candidate
 - **Sex**: gender identification (``Male|Female``)
@@ -88,7 +88,7 @@ Features
 - **Event_type__val**: It specifies the stage of the recruitment
   process for the candidate
 - **Event_feedback**: feedback received from an event (``OK|KO``)
-- **Linked_search_key**: keys indicate the number of searches conducted
+- **Linked_search__key**: keys indicate the number of searches conducted
   for a job position
 - **Overall**: overall assessment, interview score
 
@@ -168,9 +168,7 @@ Duplicates
 ~~~~~~~~~~
 
 Each candidate has more than one row in the dataset, one for each
-``Event_type__val``. We need to select the most recent one and remove
-the other ones to guarantee consistency. We could assume the last row
-for each ``ID`` to be the most recent one.
+``Event_type__val``. To ensure consistency only the most recent one should be kept while all the other occurencies should be dropped. It can be assumed that the last line of each ``ID`` is the most recent one.
 
 .. code:: python
 
@@ -261,7 +259,7 @@ the samples could be considered unuseful.
 NaNs Handling
 ~~~~~~~~~~~~~
 
-There are still many columns left with no values specified.
+There are still many columns without specified values ​​for some samples.
 
 .. parsed-literal::
 
@@ -269,7 +267,7 @@ There are still many columns left with no values specified.
      ['Residence', 'Protected Category', 'Tag', 'Study Area', 'Sector', 'Event_Type__Val', 'Event_Feedback']
 
 
-In order to define *default values* we need to analyze each feature:
+In order to define *default values* each feature needs to be analyzed:
 
 .. parsed-literal::
 
@@ -399,8 +397,7 @@ Mapping can be used to simplify this feature.
         return 'Not Specified'
 
 
-The values in the ``Residence`` column could be replaced with either the
-*italian region* or the *state*.
+The values ​​in the ``Residence`` column could be replaced with the *Italian region*, for Italian residents, or with the *state*, for non-Italian residents.
 
 .. code:: python
 
@@ -410,8 +407,8 @@ The values in the ``Residence`` column could be replaced with either the
 
 To better define *residence* 3 new columns could be added:
 ``Residence State``, ``Residence Italian Region``,
-``European Residence``. This kind of information needs to be protected
-but should also be taken in consideration in order to ensure *Fairness*.
+``European Residence``. This kind of information must be protected
+but should also be taken into account to ensure **Fairness**.
 
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_39_0.png
@@ -449,7 +446,7 @@ The ``Residence`` column could then be removed.
 **Sex**
 ^^^^^^^
 
-The dataset is unbalanced with respect to the Sex feature, with 76.8%
+The dataset is skewed toward the Sex feature, with 76.8%
 male candidates and 23.2% female candidates.
 
 
@@ -460,17 +457,15 @@ male candidates and 23.2% female candidates.
 **Protected Category**
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Mapping can be applied to simplify this feature and discriminate between
-candidates that are part of a protected category and candidates who are
-not.
+Mapping can be applied to simplify this feature and distinguish between
+candidates who are part of a protected category and candidates who are not, regardless of the *Article*.
 
 .. code:: python
 
     df['Protected Category'] = df['Protected Category'].replace('Article 18', 'Yes')
     df['Protected Category'] = df['Protected Category'].replace('Article 1', 'Yes')
 
-The dataset is highly unbalanced with respect to this feature, with only
-0.4% candidates from protected categories.
+The dataset is highly skewed with respect to this feature, with only 0.4% of candidates coming from protected categories.
 
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_53_1.png
@@ -480,8 +475,7 @@ The dataset is highly unbalanced with respect to this feature, with only
 **Tag**
 ^^^^^^^
 
-This feature is highly irregular and will need processing in order to be
-useful. Some mapping could be applied to clean the data:
+This feature is highly irregular and requires further processing to be useful. A preliminary mapping could be applied to unify cases where no keyword is specified.
 
 .. code:: python
 
@@ -564,7 +558,7 @@ useful. Some mapping could be applied to clean the data:
 **Sector**
 ^^^^^^^^^^
 
-This feature doesn’t seem relevant as its most frequent values are “*Not
+This feature does not seem relevant since its most frequent values are “*Not
 Specified*” and “*Others*”.
 
 
@@ -587,17 +581,13 @@ Specified*” and “*Others*”.
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_73_0.png
 
 
-
-The most frequent type of **event** is the “*CV Request*”, meaning that
-Akkodis has not yet received anything from that candidate. This could
-mean that for this kind of candidates there’s no way to determine
-whether they are eligible or not for the position. The distribution of ``Candidate State`` values for candidates that have not yet sent their CV is the following:
+The most common type of **event** is "*CV Request*", which means that Akkodis has not yet received anything from that candidate. This could mean that for this type of candidate it is not possible to determine whether or not they are suitable for the position in question. The distribution of ``Candidate State`` values ​​for candidates who have not yet sent their CV is as follows:
 
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_75_0.png
 
 
-The majority of this candidates have "*imported*" as ``Candidate State``, which means that there's no way to evaluate their suitability.
+Most of these candidates have "*Imported*" as their ``Candidate State`` value, which means there is no way to assess their eligibility.
 
 .. parsed-literal::
     The 53.52% of the dataset \is composed of 'Imported' candidates that have \not sent their CV yet
@@ -638,8 +628,8 @@ possible values from 16 to 3:
 Data Visualization
 ------------------
 
-**Sex and Candidate State**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sex and Candidate State
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_82_0.png
@@ -649,15 +639,15 @@ Data Visualization
 
 
 
-**Protected Category and Candidate State**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Protected Category and Candidate State
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_85_0.png
 
 
-**Age Range and Candidate State**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Age Range and Candidate State
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_87_1.png
 
@@ -665,8 +655,8 @@ Data Visualization
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_87_3.png
 
 
-**Correlation**
-~~~~~~~~~~~~~~~~
+Correlation
+~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_90_0.png
 
