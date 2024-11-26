@@ -1124,7 +1124,7 @@ Specified*” and “*Others*”.
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_70_0.png
 
 
-\**Event_type\__val*\*
+**Event_type__val**
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. parsed-literal::
@@ -1141,10 +1141,11 @@ Specified*” and “*Others*”.
 The most frequent type of **event** is the “*CV Request*”, meaning that
 Akkodis has not yet received anything from that candidate. This could
 mean that for this kind of candidates there’s no way to determine
-whether they are eligible or not for the position.
+whether they are eligible or not for the position. The distribution of ``Candidate State`` values for candidates that have not yet sent their CV is the following:
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_75_0.png
 
+The majority of this candidates have "*imported*" as ``Candidate State``, which means that there's no way to evaluate their suitability.
 
 **Event_feedback**
 ^^^^^^^^^^^^^^^^^^
