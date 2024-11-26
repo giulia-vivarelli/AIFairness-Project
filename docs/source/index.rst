@@ -351,13 +351,16 @@ Let’s analyze each feature:
 **Candidate State**
 ^^^^^^^^^^^^^^^^^^^
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_26_1.png
 
 
 **Age Range**
 ^^^^^^^^^^^^^
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_29_1.png
+
 
 
 **Residence**
@@ -410,11 +413,15 @@ To better define *residence* 3 new columns could be added:
 ``European Residence``. This kind of information needs to be protected
 but should also be taken in consideration in order to ensure *Fairness*.
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_39_0.png
+
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_40_0.png
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_43_0.png
+
 
 
 .. code:: python
@@ -428,7 +435,9 @@ but should also be taken in consideration in order to ensure *Fairness*.
     ]
     df['European Residence'] = df['Residence State'].apply(lambda x: 'Yes' if x in european_countries else 'No')
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_45_0.png
+
 
 
 The ``Residence`` column could then be removed.
@@ -443,7 +452,9 @@ The ``Residence`` column could then be removed.
 The dataset is unbalanced with respect to the Sex feature, with 76.8%
 male candidates and 23.2% female candidates.
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_49_1.png
+
 
 
 **Protected Category**
@@ -461,7 +472,9 @@ not.
 The dataset is highly unbalanced with respect to this feature, with only
 0.4% candidates from protected categories.
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_53_1.png
+
 
 
 **Tag**
@@ -484,24 +497,9 @@ useful. Some mapping could be applied to clean the data:
      '-, ENVIRONMENTAL QUALITY, ENVIRONMENTAL MANAGER, ENVIRONMENTAL PROJECT ENGINEER, ISO 14001, ENVIRONMENTAL MANAGEMENT , ISO 14001, ENVIRONMENTAL MANAGEMENT, OFFSHORE']
 
 
-============ ======= 
- Keyword      Count  
-============ ======= 
- MATLAB       576    
- C++          312    
- C            305    
- SIMULINK     305    
- SOLIDWORKS   299    
- PYTHON       275    
- EXCEL        177    
- JAVA         176    
- OFFICE       143    
- AUTOCAD      129    
-============ ======= 
-
-
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_58_0.png
+
 
 
 **Study Area**
@@ -530,297 +528,9 @@ useful. Some mapping could be applied to clean the data:
      'Engineering for the environment and the territory' 'Medical'
      'Defense and Security' 'Physical education' 'Statistics'] 
 
-.. raw:: html
-
-    
-      <div id="df-50451c5a-7fa2-4bc3-b478-14bd3e40f299" class="colab-df-container">
-        <div>
-    <style scoped>
-        .dataframe tbody tr th:only-of-type {
-            vertical-align: middle;
-        }
-    
-        .dataframe tbody tr th {
-            vertical-align: top;
-        }
-    
-        .dataframe thead th {
-            text-align: right;
-        }
-    </style>
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Study Area</th>
-          <th>Count</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>4</th>
-          <td>Mechanical engineering</td>
-          <td>2235</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>computer engineering</td>
-          <td>1344</td>
-        </tr>
-        <tr>
-          <th>12</th>
-          <td>Aeronautical/Aerospace/Astronautics Engineering</td>
-          <td>951</td>
-        </tr>
-        <tr>
-          <th>9</th>
-          <td>Biomedical Engineering</td>
-          <td>924</td>
-        </tr>
-        <tr>
-          <th>17</th>
-          <td>industrial engineering</td>
-          <td>901</td>
-        </tr>
-        <tr>
-          <th>15</th>
-          <td>Management Engineering</td>
-          <td>798</td>
-        </tr>
-        <tr>
-          <th>10</th>
-          <td>electronic Engineering</td>
-          <td>685</td>
-        </tr>
-        <tr>
-          <th>18</th>
-          <td>Other</td>
-          <td>567</td>
-        </tr>
-        <tr>
-          <th>11</th>
-          <td>Information Engineering</td>
-          <td>485</td>
-        </tr>
-        <tr>
-          <th>0</th>
-          <td>Automation/Mechatronics Engineering</td>
-          <td>430</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-        <div class="colab-df-buttons">
-    
-      <div class="colab-df-container">
-        <button class="colab-df-convert" onclick="convertToInteractive('df-50451c5a-7fa2-4bc3-b478-14bd3e40f299')"
-                title="Convert this dataframe to an interactive table."
-                style="display:none;">
-    
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-        <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-      </svg>
-        </button>
-    
-      <style>
-        .colab-df-container {
-          display:flex;
-          gap: 12px;
-        }
-    
-        .colab-df-convert {
-          background-color: #E8F0FE;
-          border: none;
-          border-radius: 50%;
-          cursor: pointer;
-          display: none;
-          fill: #1967D2;
-          height: 32px;
-          padding: 0 0 0 0;
-          width: 32px;
-        }
-    
-        .colab-df-convert:hover {
-          background-color: #E2EBFA;
-          box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-          fill: #174EA6;
-        }
-    
-        .colab-df-buttons div {
-          margin-bottom: 4px;
-        }
-    
-        [theme=dark] .colab-df-convert {
-          background-color: #3B4455;
-          fill: #D2E3FC;
-        }
-    
-        [theme=dark] .colab-df-convert:hover {
-          background-color: #434B5C;
-          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-          filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-          fill: #FFFFFF;
-        }
-      </style>
-    
-        <script>
-          const buttonEl =
-            document.querySelector('#df-50451c5a-7fa2-4bc3-b478-14bd3e40f299 button.colab-df-convert');
-          buttonEl.style.display =
-            google.colab.kernel.accessAllowed ? 'block' : 'none';
-    
-          async function convertToInteractive(key) {
-            const element = document.querySelector('#df-50451c5a-7fa2-4bc3-b478-14bd3e40f299');
-            const dataTable =
-              await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                        [key], {});
-            if (!dataTable) return;
-    
-            const docLinkHtml = 'Like what you see? Visit the ' +
-              '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-              + ' to learn more about interactive tables.';
-            element.innerHTML = '';
-            dataTable['output_type'] = 'display_data';
-            await google.colab.output.renderOutput(dataTable, element);
-            const docLink = document.createElement('div');
-            docLink.innerHTML = docLinkHtml;
-            element.appendChild(docLink);
-          }
-        </script>
-      </div>
-    
-    
-    <div id="df-c0461018-c5c1-402e-a14d-f64706eaf7a3">
-      <button class="colab-df-quickchart" onclick="quickchart('df-c0461018-c5c1-402e-a14d-f64706eaf7a3')"
-                title="Suggest charts"
-                style="display:none;">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-         width="24px">
-        <g>
-            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-        </g>
-    </svg>
-      </button>
-    
-    <style>
-      .colab-df-quickchart {
-          --bg-color: #E8F0FE;
-          --fill-color: #1967D2;
-          --hover-bg-color: #E2EBFA;
-          --hover-fill-color: #174EA6;
-          --disabled-fill-color: #AAA;
-          --disabled-bg-color: #DDD;
-      }
-    
-      [theme=dark] .colab-df-quickchart {
-          --bg-color: #3B4455;
-          --fill-color: #D2E3FC;
-          --hover-bg-color: #434B5C;
-          --hover-fill-color: #FFFFFF;
-          --disabled-bg-color: #3B4455;
-          --disabled-fill-color: #666;
-      }
-    
-      .colab-df-quickchart {
-        background-color: var(--bg-color);
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: var(--fill-color);
-        height: 32px;
-        padding: 0;
-        width: 32px;
-      }
-    
-      .colab-df-quickchart:hover {
-        background-color: var(--hover-bg-color);
-        box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: var(--button-hover-fill-color);
-      }
-    
-      .colab-df-quickchart-complete:disabled,
-      .colab-df-quickchart-complete:disabled:hover {
-        background-color: var(--disabled-bg-color);
-        fill: var(--disabled-fill-color);
-        box-shadow: none;
-      }
-    
-      .colab-df-spinner {
-        border: 2px solid var(--fill-color);
-        border-color: transparent;
-        border-bottom-color: var(--fill-color);
-        animation:
-          spin 1s steps(1) infinite;
-      }
-    
-      @keyframes spin {
-        0% {
-          border-color: transparent;
-          border-bottom-color: var(--fill-color);
-          border-left-color: var(--fill-color);
-        }
-        20% {
-          border-color: transparent;
-          border-left-color: var(--fill-color);
-          border-top-color: var(--fill-color);
-        }
-        30% {
-          border-color: transparent;
-          border-left-color: var(--fill-color);
-          border-top-color: var(--fill-color);
-          border-right-color: var(--fill-color);
-        }
-        40% {
-          border-color: transparent;
-          border-right-color: var(--fill-color);
-          border-top-color: var(--fill-color);
-        }
-        60% {
-          border-color: transparent;
-          border-right-color: var(--fill-color);
-        }
-        80% {
-          border-color: transparent;
-          border-right-color: var(--fill-color);
-          border-bottom-color: var(--fill-color);
-        }
-        90% {
-          border-color: transparent;
-          border-bottom-color: var(--fill-color);
-        }
-      }
-    </style>
-    
-      <script>
-        async function quickchart(key) {
-          const quickchartButtonEl =
-            document.querySelector('#' + key + ' button');
-          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-          quickchartButtonEl.classList.add('colab-df-spinner');
-          try {
-            const charts = await google.colab.kernel.invokeFunction(
-                'suggestCharts', [key], {});
-          } catch (error) {
-            console.error('Error during call to suggestCharts:', error);
-          }
-          quickchartButtonEl.classList.remove('colab-df-spinner');
-          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-        }
-        (() => {
-          let quickchartButtonEl =
-            document.querySelector('#df-c0461018-c5c1-402e-a14d-f64706eaf7a3 button');
-          quickchartButtonEl.style.display =
-            google.colab.kernel.accessAllowed ? 'block' : 'none';
-        })();
-      </script>
-    </div>
-    
-        </div>
-      </div>
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_62_0.png
+
 
 
 **Study Title**
@@ -832,8 +542,10 @@ useful. Some mapping could be applied to clean the data:
      ['Five-year degree' 'Doctorate' 'High school graduation'
      'Three-year degree' "master's degree" 'Middle school diploma'
      'Professional qualification'] 
- 
+
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_65_0.png
+
 
 
 **Years Experience**
@@ -843,8 +555,10 @@ useful. Some mapping could be applied to clean the data:
 
     There are 7 different <Years Experience> categories:
      ['[1-3]' '[7-10]' '[3-5]' '[5-7]' '[+10]' '[0]' '[0-1]'] 
-    
+
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_68_1.png
+
 
 
 **Sector**
@@ -853,7 +567,9 @@ useful. Some mapping could be applied to clean the data:
 This feature doesn’t seem relevant as its most frequent values are “*Not
 Specified*” and “*Others*”.
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_70_0.png
+
 
 
 **Event_type__val**
@@ -867,7 +583,9 @@ Specified*” and “*Others*”.
      'Inadequate CV' 'Economic proposal' 'Research association'
      'Sending SC to customer' 'Not Specified' 'Commercial note']
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_73_0.png
+
 
 
 The most frequent type of **event** is the “*CV Request*”, meaning that
@@ -875,12 +593,15 @@ Akkodis has not yet received anything from that candidate. This could
 mean that for this kind of candidates there’s no way to determine
 whether they are eligible or not for the position. The distribution of ``Candidate State`` values for candidates that have not yet sent their CV is the following:
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_75_0.png
+
 
 The majority of this candidates have "*imported*" as ``Candidate State``, which means that there's no way to evaluate their suitability.
 
 .. parsed-literal::
     The 53.52% of the dataset is composed of 'Imported' candidates that have not sent their CV yet
+
 
 **Event_feedback**
 ^^^^^^^^^^^^^^^^^^
@@ -908,7 +629,10 @@ possible values from 16 to 3:
     After mapping there are now 3 possible values for <Event_Feedback>:
      ['OK' 'Not Specified' 'KO']
 
+
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_80_0.png
+
 
 
 Data Visualization
@@ -917,13 +641,17 @@ Data Visualization
 **Sex and Candidate State**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_82_0.png
+
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_83_0.png
 
 
+
 **Protected Category and Candidate State**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_85_0.png
 
@@ -932,6 +660,7 @@ Data Visualization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_87_1.png
+
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_87_3.png
 
