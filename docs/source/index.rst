@@ -26,74 +26,93 @@ Dataset Description
 Features
 ~~~~~~~~
 
-The features can be divided in: \* **CANDIDATE FEATURES** \* **ID**:
-unique identifier for the candidate \* **Candidate State**: status of
-the candidate’s application \* ``Hired``: the candidate has been
-selected \* ``Vivier``: the candidate’s skills do not correspond to the
-requested skills, but will be taken in consideration for future
-opportunities (**by who?** Akkodis \| the company) \* ``QM``:
-Qualification Meeting \* ``In selection``: selection phase \*
-``First contact``: the candidate has been contacted from the company for
-the first time \* ``Economic proposal``: the company has made a proposal
-to the candidate \* ``Imported``: the candidate has been transfered from
-another DB **??**
+The features can be divided in:
+* **CANDIDATE FEATURES**
+  * **ID**: unique identifier for the candidate
+  * **Candidate State**: status of the candidate's application
+    * `Hired`: the candidate has been selected
+    * `Vivier`: the candidate's skills do not correspond to the requested skills, but will be taken in consideration for future opportunities (**by who?** Akkodis | the company)
+    * `QM`: Qualification Meeting
+    * `In selection`: selection phase
+    * `First contact`: the candidate has been contacted from the company for the first time
+    * `Economic proposal`: the company has made a proposal to the candidate
+    * `Imported`: the candidate has been transfered from another DB **??**
+  
+   Possible chronological orders for candidate status:
+    * `In selection` > `First contact` > `QM` > `Economic Proposal` > `Hired`  (complete cycle with positive outcome)
+    * `In selection` > `First contact` > `QM` > `Vivier`
+    * `In selection` > `First contact` > `QM` (end of the selection process)
+    * `In selection` > `First contact` (end of the selection process **WHY?**)
+  * **Age Range**: range of age for the candidate
+    * `< 20`
+    * `20 - 25`
+    * `26 - 30`
+    * `31 - 35`
+    * `36 - 40`
+    * `40 - 45`
+    * `> 45`
+  * **Residence**: current place of residence for the candidate
+  * **Sex**: gender identification (`Male|Female`)
+  * **Protected Category**: indicates if the candidate falls into a protected category
+    * `Article 1`
+    * `Article 18`
+    * Not Specified
+  * **TAG**: keywords used by recruiter
+  * **Study Area**: Field of study or academic discipline of the candidate
+  * **Study Title**: Academic degree or title obtained by the candidate
+    * `Five-year degree`
+    * `Doctorate`
+    * `High school graduation`
+    * `Three-year degree`
+    * `master's degree`
+    * `Professional qualification`
+    * `Middle school diploma`
+  * **Years Experience**: number of years of professional experience of the candidate
+    * `0`
+    * `0-1`
+    * `1-3`
+    * `3-5`
+    * `5-7`
+    * `7-10`
+    * `+10`
+  * **Sector**: industry or sector in which the candidate has experience
+  * **Last Role**: candidate's most recent job role
+  * **Year of Insertion**: year when the candidate's information was entered into the portal
+  * **Year of Recruitment**: year in which the candidate was hired
+  * **Current Ral**: current or existing salary
+  * **Expected Ral**: expected salary
+  
+  Values present only if the candidate have moved forward in the recruiting process:
+  * **Technical Skills**: skills related to technical or specialized expertise from 1 to 4
+  * **Standing/Position**: standing or position within the organization from 1 to 4 **??**
+  * **Comunication**: communication skills from 1 to 4
+  * **Maturity**: level of maturity from 1 to 4
+  * **Dynamism**: level of Dynamism from 1 to 4
+  * **Mobility**: mobility from 1 to 4
+  * **English**: proficiency in the English language from 1 to 4
+* **HIRING PROCESS FEATURES**
+  * **Event_type__val**: It specifies the stage of the recruitment process for the candidate
+  * **Event_feedback**: feedback received from an event (`OK|KO`)
+  * **Overall**: overall assessment, interview score
+    * `1 - Low` or `~ 1 - Low`
+    * `2 - Medium` or `~ 2 - Medium`
+    * `3 - High` or `~ 3 - High`
+    * `4 - Top` or `~ 4 - Top`
+  * **Akkodis headquarters**: headquarters location for Akkodis
+* **JOB POSITION FEATURES**: these features are present only if the candidate has been hired
+  * **Recruitment Request**: represents the application request for a candidacy
+  * **Assumption Headquarters**: headquarters location associated with the hiring assumption
+  * **Job Family Hiring**: Job family or category for the hiring position
+  * **Job Title Hiring**: specific job title for the hiring position
+  * **Job Description**: description of the job role
+  * **Candidate Profile**: ideal profile information for the candidate, requested by the company
+  * **Years Experience.1**: additional field for specifying years of experience requested
+  * **Minimum Ral** (Gross Annual Salary): minimum expected gross annual salary
+  * **Ral Maximum**: maximum expected gross annual salary
+  * **Study Level**: level of study requested for the job position, the values are equivalent to `Study Title`
+  * **Study Area.1**: additional field for specifying the academic field of study requested
+  * **Linked_search_key**: indicates the number of searches conducted for a job position
 
-Possible chronological orders for candidate status: \* ``In selection``
-> ``First contact`` > ``QM`` > ``Economic Proposal`` > ``Hired``
-(complete cycle with positive outcome) \* ``In selection`` >
-``First contact`` > ``QM`` > ``Vivier`` \* ``In selection`` >
-``First contact`` > ``QM`` (end of the selection process) \*
-``In selection`` > ``First contact`` (end of the selection process
-**WHY?**) \* **Age Range**: range of age for the candidate \* ``< 20``
-\* ``20 - 25`` \* ``26 - 30`` \* ``31 - 35`` \* ``36 - 40`` \*
-``40 - 45`` \* ``> 45`` \* **Residence**: current place of residence for
-the candidate \* **Sex**: gender identification (``Male|Female``) \*
-**Protected Category**: indicates if the candidate falls into a
-protected category \* ``Article 1`` \* ``Article 18`` \* Not Specified
-\* **TAG**: keywords used by recruiter \* **Study Area**: Field of study
-or academic discipline of the candidate \* **Study Title**: Academic
-degree or title obtained by the candidate \* ``Five-year degree`` \*
-``Doctorate`` \* ``High school graduation`` \* ``Three-year degree`` \*
-``master's degree`` \* ``Professional qualification`` \*
-``Middle school diploma`` \* **Years Experience**: number of years of
-professional experience of the candidate \* ``0`` \* ``0-1`` \* ``1-3``
-\* ``3-5`` \* ``5-7`` \* ``7-10`` \* ``+10`` \* **Sector**: industry or
-sector in which the candidate has experience \* **Last Role**:
-candidate’s most recent job role \* **Year of Insertion**: year when the
-candidate’s information was entered into the portal \* **Year of
-Recruitment**: year in which the candidate was hired \* **Current Ral**:
-current or existing salary \* **Expected Ral**: expected salary
-
-Values present only if the candidate have moved forward in the
-recruiting process: \* **Technical Skills**: skills related to technical
-or specialized expertise from 1 to 4 \* **Standing/Position**: standing
-or position within the organization from 1 to 4 **??** \*
-**Comunication**: communication skills from 1 to 4 \* **Maturity**:
-level of maturity from 1 to 4 \* **Dynamism**: level of Dynamism from 1
-to 4 \* **Mobility**: mobility from 1 to 4 \* **English**: proficiency
-in the English language from 1 to 4 \* **HIRING PROCESS FEATURES** \*
-\**Event_type\__val\ **: It specifies the stage of the recruitment
-process for the candidate \*** Event_feedback\ **: feedback received
-from an event (``OK|KO``) \*** Overall\ **: overall assessment,
-interview score \* ``1 - Low`` or ``~ 1 - Low`` \* ``2 - Medium`` or
-``~ 2 - Medium`` \* ``3 - High`` or ``~ 3 - High`` \* ``4 - Top`` or
-``~ 4 - Top`` \*** Akkodis headquarters\ **: headquarters location for
-Akkodis \*** JOB POSITION FEATURES\ **: these features are present only
-if the candidate has been hired \*** Recruitment Request\ **: represents
-the application request for a candidacy \*** Assumption
-Headquarters\ **: headquarters location associated with the hiring
-assumption \*** Job Family Hiring\ **: Job family or category for the
-hiring position \*** Job Title Hiring\ **: specific job title for the
-hiring position \*** Job Description\ **: description of the job role
-\*** Candidate Profile\ **: ideal profile information for the candidate,
-requested by the company \*** Years Experience.1\ **: additional field
-for specifying years of experience requested \*** Minimum Ral*\* (Gross
-Annual Salary): minimum expected gross annual salary \* **Ral Maximum**:
-maximum expected gross annual salary \* **Study Level**: level of study
-requested for the job position, the values are equivalent to
-``Study Title`` \* **Study Area.1**: additional field for specifying the
-academic field of study requested \* **Linked_search_key**: indicates
-the number of searches conducted for a job position
 
 .. code:: python
 
