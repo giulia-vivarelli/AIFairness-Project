@@ -2236,13 +2236,13 @@ KO (lost availability)
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_261_3.png
 
 
-**``Overall``**
+**Overall**
 ~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_264_0.png
 
 
-**``Current Ral``**
+**Current Ral**
 ~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_267_0.png
@@ -2251,7 +2251,7 @@ KO (lost availability)
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_268_0.png
 
 
-**``Expected Ral``**
+**Expected Ral**
 ~~~~~~~~~~~~~~~~~~~~
 
 
@@ -2261,55 +2261,55 @@ KO (lost availability)
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_272_0.png
 
 
-**``Technical Skills``**
+**Technical Skills**
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_275_0.png
 
 
-**``Standing/Position``**
+**Standing/Position**
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_278_0.png
 
 
-**``Comunication``**
+**Comunication**
 ~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_281_0.png
 
 
-**``Maturity``**
+**Maturity**
 ~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_284_0.png
 
 
-**``Dynamism``**
+**Dynamism**
 ~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_287_0.png
 
 
-**``Mobility``**
+**Mobility**
 ~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_290_0.png
 
 
-**``English``**
+**English**
 ~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_293_0.png
 
 
-**``European Residence``**
+**European Residence**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_295_0.png
 
 
-**``Residence State``**
+**Residence State**
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_297_0.png
@@ -2318,7 +2318,7 @@ KO (lost availability)
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_298_0.png
 
 
-**``Residence Italian Region``**
+**Residence Italian Region**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_300_0.png
