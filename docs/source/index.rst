@@ -1104,19 +1104,19 @@ New Cleaned Dataset
 Feature Analysis
 -----------------
 
-**``Candidate State``**
+**Candidate State**
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_177_0.png
 
 
-**``Age Range``**
+**Age Range**
 ~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_180_0.png
 
 
-**``Sex``**
+**Sex**
 ~~~~~~~~~~~
 
 The dataset is unbalanced with respect to Sex feature, with 80% male
@@ -1125,7 +1125,7 @@ candidates and 20% female candidates.
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_182_0.png
 
 
-**``Protected Category``**
+**Protected Category**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The dataset is highly unbalanced with respect to this feature, with only
@@ -1134,7 +1134,7 @@ The dataset is highly unbalanced with respect to this feature, with only
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_184_0.png
 
 
-**``Tag``**
+**Tag**
 ~~~~~~~~~~~
 
 This feature is highly irregular and will need processing in order to be
@@ -1150,7 +1150,7 @@ useful. Some mapping could be applied to clean the data:
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_188_0.png
 
 
-**``Study Area``**
+**Study Area**
 ~~~~~~~~~~~~~~~~~~
 
 .. parsed-literal::
@@ -1181,7 +1181,7 @@ useful. Some mapping could be applied to clean the data:
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_191_0.png
 
 
-**``Study Title``**
+**Study Title**
 ~~~~~~~~~~~~~~~~~~~
 
 .. parsed-literal::
@@ -1195,7 +1195,7 @@ useful. Some mapping could be applied to clean the data:
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_195_0.png
 
 
-**``Years Experience``**
+**Years Experience**
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. parsed-literal::
@@ -1207,7 +1207,7 @@ useful. Some mapping could be applied to clean the data:
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_199_0.png
 
 
-**``Sector``**
+**Sector**
 ~~~~~~~~~~~~~~
 
 This feature doesn’t seem relevant as its most frequent value is
@@ -1216,7 +1216,7 @@ This feature doesn’t seem relevant as its most frequent value is
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_201_0.png
 
 
-**``Last Role``**
+**Last Role**
 ~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_203_0.png
@@ -1225,19 +1225,19 @@ This feature doesn’t seem relevant as its most frequent value is
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_205_0.png
 
 
-**``Year Of Insertion``**
+**Year Of Insertion**
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_208_0.png
 
 
-**``Year Of Recruitment``**
+**Year Of Recruitment**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_211_0.png
 
 
-**``Event_type__val``**
+**Event_type__val**
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 A possible chronological order could be useful to maintain only the last
@@ -1254,7 +1254,7 @@ event.
 .. image:: Akkodis_Dataset_Analysis_files/Akkodis_Dataset_Analysis_215_0.png
 
 
-**``Event Feedback``**
+**Event Feedback**
 ~~~~~~~~~~~~~~~~~~~~~~
 
 There are many possible ``Event_Feedback`` in the dataset:
