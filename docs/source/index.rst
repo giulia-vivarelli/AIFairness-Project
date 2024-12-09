@@ -264,13 +264,11 @@ Candidate State
 ~~~~~~~~~~~~~~~
 
 Possible chronological orders (*provided by Akkodis*) for candidate
-status: \* ``In selection`` > ``First contact`` > ``QM`` >
-``Economic Proposal`` > ``Hired`` (complete cycle with positive outcome)
-\* ``In selection`` > ``First contact`` > ``QM`` > ``Vivier`` \*
-``In selection`` > ``First contact`` > ``QM`` (end of the selection
-process **negative outcome?**) \* ``In selection`` > ``First contact``
-(end of the selection process **WHY?** (candidate not suitable \|
-candidate’s choice))
+status: 
+   * ``In selection`` > ``First contact`` > ``QM`` > ``Economic Proposal`` > ``Hired`` (complete cycle with positive outcome)
+   * ``In selection`` > ``First contact`` > ``QM`` > ``Vivier`` 
+   * ``In selection`` > ``First contact`` > ``QM`` (end of the selection process **negative outcome?**) 
+   * ``In selection`` > ``First contact`` (end of the selection process **WHY?** (candidate not suitable \|candidate’s choice))
 
 **Based on statistics the order is more likely to be Imported > First
 Contact > In selection …**
