@@ -27,7 +27,7 @@ Features
 ~~~~~~~~
 
 The features can be divided in:
-* **CANDIDATE FEATURES**
+ * **CANDIDATE FEATURES**
   * **ID**: unique identifier for the candidate
   * **Candidate State**: status of the candidate's application
     * `Hired`: the candidate has been selected
@@ -82,7 +82,7 @@ The features can be divided in:
   * **Current Ral**: current or existing salary
   * **Expected Ral**: expected salary
   
-  Values present only if the candidate have moved forward in the recruiting process:
+ Values present only if the candidate have moved forward in the recruiting process:
   * **Technical Skills**: skills related to technical or specialized expertise from 1 to 4
   * **Standing/Position**: standing or position within the organization from 1 to 4 **??**
   * **Comunication**: communication skills from 1 to 4
@@ -90,7 +90,7 @@ The features can be divided in:
   * **Dynamism**: level of Dynamism from 1 to 4
   * **Mobility**: mobility from 1 to 4
   * **English**: proficiency in the English language from 1 to 4
-* **HIRING PROCESS FEATURES**
+ * **HIRING PROCESS FEATURES**
   * **Event_type__val**: It specifies the stage of the recruitment process for the candidate
   * **Event_feedback**: feedback received from an event (`OK|KO`)
   * **Overall**: overall assessment, interview score
@@ -99,7 +99,7 @@ The features can be divided in:
     * `3 - High` or `~ 3 - High`
     * `4 - Top` or `~ 4 - Top`
   * **Akkodis headquarters**: headquarters location for Akkodis
-* **JOB POSITION FEATURES**: these features are present only if the candidate has been hired
+ * **JOB POSITION FEATURES**: these features are present only if the candidate has been hired
   * **Recruitment Request**: represents the application request for a candidacy
   * **Assumption Headquarters**: headquarters location associated with the hiring assumption
   * **Job Family Hiring**: Job family or category for the hiring position
@@ -654,12 +654,15 @@ Sample Sorting
 --------------
 
 To ensure that the last row for each candidate is the most recent one we
-can sort the dataset: \* by **ID**: rows of the same candidate will be
-near \* by **Year Of Insertion**: If a candidate have more than one
-value for this column the rows will be chronologically ordered \* by
-**Year Of Recruitment**: If a candidate have more than one value for
+can sort the dataset: 
+   * by **ID**: rows of the same candidate will be
+near 
+   * by **Year Of Insertion**: If a candidate have more than one
+value for this column the rows will be chronologically ordered 
+   * by **Year Of Recruitment**: If a candidate have more than one value for
 this column (i.e. has been hired multiple times) the rows will be
-chronologically ordered \* by **Candidate State**: to reflect the normal
+chronologically ordered 
+   * by **Candidate State**: to reflect the normal
 hiring process order of events
 
 .. code:: python
