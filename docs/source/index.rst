@@ -29,7 +29,8 @@ Features
 The features can be divided in:
  * **CANDIDATE FEATURES**
   * **ID**: unique identifier for the candidate
-  * **Candidate State**: status of the candidate's application
+  * **Candidate State**: status of the candidate's application 
+    
     * `Hired`: the candidate has been selected
     * `Vivier`: the candidate's skills do not correspond to the requested skills, but will be taken in consideration for future opportunities (**by who?** Akkodis | the company)
     * `QM`: Qualification Meeting
@@ -44,6 +45,7 @@ The features can be divided in:
     * `In selection` > `First contact` > `QM` (end of the selection process)
     * `In selection` > `First contact` (end of the selection process **WHY?**)
   * **Age Range**: range of age for the candidate
+    
     * `< 20`
     * `20 - 25`
     * `26 - 30`
@@ -54,12 +56,14 @@ The features can be divided in:
   * **Residence**: current place of residence for the candidate
   * **Sex**: gender identification (`Male|Female`)
   * **Protected Category**: indicates if the candidate falls into a protected category
+    
     * `Article 1`
     * `Article 18`
     * Not Specified
   * **TAG**: keywords used by recruiter
   * **Study Area**: Field of study or academic discipline of the candidate
   * **Study Title**: Academic degree or title obtained by the candidate
+    
     * `Five-year degree`
     * `Doctorate`
     * `High school graduation`
@@ -68,6 +72,7 @@ The features can be divided in:
     * `Professional qualification`
     * `Middle school diploma`
   * **Years Experience**: number of years of professional experience of the candidate
+    
     * `0`
     * `0-1`
     * `1-3`
@@ -94,6 +99,7 @@ The features can be divided in:
   * **Event_type__val**: It specifies the stage of the recruitment process for the candidate
   * **Event_feedback**: feedback received from an event (`OK|KO`)
   * **Overall**: overall assessment, interview score
+    
     * `1 - Low` or `~ 1 - Low`
     * `2 - Medium` or `~ 2 - Medium`
     * `3 - High` or `~ 3 - High`
